@@ -1,0 +1,72 @@
+{
+    "estufas": [
+        {   
+            "id": 1,
+            "nome": "estufa1",
+            "ordem_producao": 5,
+            "temperatura_estufa_lida": 20,
+            "temperatura_estufa_regulada": 20,
+            "tensao_lida": 20,
+            "tensao_regulada": 20,
+            "tempo_decorrido": 5,
+            "tempo_total": 15,
+            "velocidade_exaustor_lida": 20,
+            "velocidade_exaustor_regulada": 20,
+            "status": "Em processo",
+            "receita": "receita1",
+            "produto": "produto1"
+        },
+        {
+            "id": 2,
+            "nome": "estufa2",
+            "ordem_producao": 2,
+            "temperatura_estufa_lida": 20,
+            "temperatura_estufa_regulada": 20,
+            "tensao_lida": 20,
+            "tensao_regulada": 20,
+            "tempo_decorrido": 5,
+            "tempo_total": 15,
+            "velocidade_exaustor_lida": 20,
+            "velocidade_exaustor_regulada": 20,
+            "status": "Em processo",
+            "receita": "receita2",
+            "produto": "produto2"
+        },
+        {
+            "id": 3,
+            "nome": "estufa3",
+            "ordem_producao": 3,
+            "temperatura_estufa_lida": 20,
+            "temperatura_estufa_regulada": 20,
+            "tensao_lida": 20,
+            "tensao_regulada": 20,
+            "tempo_decorrido": 5,
+            "tempo_total": 15,
+            "velocidade_exaustor_lida": 20,
+            "velocidade_exaustor_regulada": 20,
+            "status": "Em processo",
+            "receita": "receita3",
+            "produto": "produto3"
+        },
+        {
+            "id": 4,
+            "nome": "estufa4",
+            "ordem_producao": 4,
+            "temperatura_estufa_lida": 20,
+            "temperatura_estufa_regulada": 20,
+            "tensao_lida": 20,
+            "tensao_regulada": 20,
+            "tempo_decorrido": 5,
+            "tempo_total": 15,
+            "velocidade_exaustor_lida": 20,
+            "velocidade_exaustor_regulada": 20,
+            "status": "Em processo",
+            "receita": "receita4",
+            "produto": "produto4"
+        }
+            
+    ]
+
+
+
+}
