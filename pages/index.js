@@ -10,18 +10,23 @@ export default function Home() {
   const [estufas, setEstufas] = useState([]);
 
   useEffect(() => {
+    //Carregar os dados das estufas
+    //setInterval se refere a uma atualização a cada 1 segundo (1000 milisegundos)
+    setInterval(() => {
+
     axios.get('http://localhost:4000/estufas')
     .then((response) => {
       setEstufas(response.data);
     })
+
     .catch(err => {
-      console.log(err);
-    })
-  }, []);
+      console.log(err);})
+    }, 1000);
+}, [] );
 
   return (
     <TemplateDefault maxWidth='sm'>
-
+      {/*
           <ul>
             {estufas.map((estufa, key) => {
               return (
@@ -33,6 +38,7 @@ export default function Home() {
             }
               )}
           </ul>
+          */}
 
     </TemplateDefault>
   )
