@@ -10,7 +10,7 @@
             "tensao_regulada": 20,
             "tempo_decorrido": 5,
             "tempo_total": 15,
-            "velocidade_exaustor_lida": 20,
+            "velocidade_exaustor_lida": 10,
             "velocidade_exaustor_regulada": 20,
             "status": "Em processo",
             "receita": "receita1",

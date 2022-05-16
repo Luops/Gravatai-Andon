@@ -12,16 +12,28 @@ import {
     CardActions } from "@material-ui/core";
 import TemplateDefault from '../../src/templates/Default';
 import { makeStyles } from "@material-ui/core/styles";
-import { display, fontSize, fontWeight } from "@mui/system";
+import { border, display, flexbox, fontSize, fontWeight, padding } from "@mui/system";
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
+    
+    containerGeral: {
+    },
     container: {
-        marginTop: "100px",
+        width: "100%",
+        display: "wrap",
+        alignContent: "center",
     },
     gridEstufa: {
-       
-    }, 
+       padding: "1em",
+       border: "1px solid #ccc",
+       borderRadius: "5px",
+       width: "15%",
+       margin: "1em",
+       marginLeft: "5em",
+       display: "inline-block",
+       textAlign: "center",
+    },
         }))
 
 export default function estufas() {
@@ -48,12 +60,11 @@ export default function estufas() {
 
 
     return (
-    <TemplateDefault maxWidth='md'>
-
+    <TemplateDefault maxWidth='md' className={classes.containerGeral}>
+        <Container className={classes.container}>
         {estufas.map((estufa, key) => {
         return(
-            <Container className={classes.container}>
-            <Grid container spacing={1} className={classes.gridEstufa} direction='column'>
+            <Grid className={classes.gridEstufa} key={key} >
                 <Typography variant="h3" component="h1" >
                    {estufa.nome}
                 </Typography>
@@ -70,12 +81,12 @@ export default function estufas() {
                    </Typography>
                 </div>
             </Grid>
-        </Container>
+        
         ) }
       
     )
-     
         }
+        </Container>
         </TemplateDefault> 
     )
 }
