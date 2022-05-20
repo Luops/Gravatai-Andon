@@ -4,7 +4,7 @@
             "id": 1,
             "nome": "E01",
             "ordem_producao":15,
-            "temperatura_estufa_lida": 15,
+            "temperatura_estufa_lida": 30,
             "temperatura_estufa_regulada": 20,
             "tensao_lida": 20,
             "tensao_regulada": 20,
