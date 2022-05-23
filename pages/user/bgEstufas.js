@@ -20,22 +20,21 @@ import HeatPumpIcon from '@mui/icons-material/HeatPump';
 const useStyles = makeStyles((theme) => ({
     
     containerGeral: {
+        
     },
     container: {
-        width: "100%",
-        display: "wrap",
-        alignContent: "center",
+        margin: '0 auto',
+        display: 'flex',
     },
     gridEstufa: {
-       padding: "0.2em",
+       padding: "0px",
        border: "2px solid #000",
        borderRadius: "5px",
-       width: "20%",
        margin: "1em",
        marginTop: "4em",
-       marginLeft: "3em",
        display: "inline-block",
        textAlign: "center",
+       marginLeft: "5%",
     },
     txtProduto: {
         fontWeight: "bold",
@@ -48,27 +47,28 @@ const useStyles = makeStyles((theme) => ({
     divTempExaus: {
         display:"flex",
         flexDirection:"row",
-        justifyContent: "space-Between",
+        justifyContent: "space-evenly",
         marginTop:"0.5em",
         marginLeft:"0.5em",
         marginRight:"0.5em",
     },
     boxTemp: {
         display:"flex",
-        padding: "1em",
-        width:"45%",
+        padding: "2em 0 2em 0em",
+        width:"9em",
         border: "1px solid #000",
         borderRadius: "5px",
         backgroundColor:"#E8E8E8",
+        justifyContent: "center",
     },
     boxExaus: {
         display:"flex",
-        padding:"1em",
-        marginLeft:"2em",
-        width:"45%",
+        padding:"2em 0 2em 0em",
+        width:"35%",
         border:"1px solid #000",
         borderRadius: "5px",
         backgroundColor:"#E8E8E8",
+        justifyContent: "center",
     },
     divConfig: {
         marginTop:"1em",
@@ -114,10 +114,10 @@ export default function estufas() {
 
     return (
     <TemplateDefault maxWidth='md' className={classes.containerGeral}>
-        <Container className={classes.container}>
+        <Grid container spacing={0} className={classes.container}>
         {estufas.map((estufa, key) => {
         return(
-            <Grid className={classes.gridEstufa} key={key} >
+            <Grid item lg={2} md={4} sm={6} xs={12} className={classes.gridEstufa} key={key} >
                 <Typography variant="h3" component="h1" >
                    {estufa.nome}
                 </Typography>
@@ -192,7 +192,7 @@ export default function estufas() {
       
     )
         }
-        </Container>
+        </Grid>
         </TemplateDefault> 
     )
 }
