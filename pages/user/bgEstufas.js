@@ -93,7 +93,7 @@ export default function Estufas() {
     const classes = useStyles();
 
     //Armazenar os dados das estufas
-  const [estufas, setEstufas] = useState([]);
+  const [Estufas, setEstufas] = useState([]);
 
   useEffect(() => {
     //Carregar os dados das estufas
