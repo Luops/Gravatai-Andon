@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     },
         }))
 
-export default function estufas() {
+export default function Estufas() {
     const classes = useStyles();
 
     //Armazenar os dados das estufas
