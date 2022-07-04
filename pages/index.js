@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     //Carregar os dados das estufas
-    //setInterval se refere a uma atualização a cada 1 segundo (1000 milisegundos)
+    //setInterval se refere a uma atualização a cada 10 segundos (10000 milisegundos)
     setInterval(() => {
 
     axios.get('http://localhost:4000/estufas')
@@ -21,24 +21,12 @@ export default function Home() {
 
     .catch(err => {
       console.log(err);})
-    }, 1000);
+    }, 10000);
 }, [] );
 
   return (
     <TemplateDefault maxWidth='sm'>
-      {/*
-          <ul>
-            {estufas.map((estufa, key) => {
-              return (
-                <li key={key}>
-                  <h1>{estufa.nome}</h1>
-                  <p>{estufa.ordem_producao}</p>
-                </li>
-              )
-            }
-              )}
-          </ul>
-          */}
+      {}
 
     </TemplateDefault>
   )

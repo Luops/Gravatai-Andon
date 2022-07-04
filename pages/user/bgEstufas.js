@@ -17,31 +17,37 @@ import axios from 'axios';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import HeatPumpIcon from '@mui/icons-material/HeatPump';
 
+
+
+
 const useStyles = makeStyles((theme) => ({
     
     containerGeral: {
-        
+        width: "100%",
     },
     container: {
         margin: '0 auto',
         display: 'flex',
+        justifyContent: "space-evenly",
+        padding: "0rem 1rem",
+        width: "100%",
     },
     gridEstufa: {
-       padding: "0px",
        border: "2px solid #000",
-       borderRadius: "5px",
-       margin: "1em",
-       marginTop: "4em",
+       borderRadius: "10px",
+       marginTop: "4rem",
        display: "inline-block",
-       textAlign: "center",
-       marginLeft: "5%",
+       textAlign: "center"
+    },
+    txtNome: {
+        fontWeight: "bold"
     },
     txtProduto: {
         fontWeight: "bold",
         marginTop: "0.5em",
     },
     txtOP: {
-        fontWeight: "bold",
+        fontWeight: "900",
         marginTop: "0.5em",
     },
     divTempExaus: {
@@ -49,13 +55,11 @@ const useStyles = makeStyles((theme) => ({
         flexDirection:"row",
         justifyContent: "space-evenly",
         marginTop:"0.5em",
-        marginLeft:"0.5em",
-        marginRight:"0.5em",
-    },
+        
+      },
     boxTemp: {
         display:"flex",
-        padding: "2em 0 2em 0em",
-        width:"9em",
+        padding: "10% 2%",
         border: "1px solid #000",
         borderRadius: "5px",
         backgroundColor:"#E8E8E8",
@@ -63,8 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
     boxExaus: {
         display:"flex",
-        padding:"2em 0 2em 0em",
-        width:"35%",
+        padding: "10% 2%",
         border:"1px solid #000",
         borderRadius: "5px",
         backgroundColor:"#E8E8E8",
@@ -79,13 +82,13 @@ const useStyles = makeStyles((theme) => ({
         display:"flex",
     },
     txtConfigTemp:{
-        fontWeight:"400",
-        fontSize:"1.2em",
+        fontWeight:"900",
+        fontSize:"1.5em",
         marginRight:"0.5em",
     },
     apiConfigTemp:{
         fontWeight:"400",
-        fontSize:"1.2em",
+        fontSize:"1.5em",
     },
         }))
 
@@ -100,85 +103,85 @@ export default function Estufas() {
     //setInterval se refere a uma atualização a cada 1 segundo (1000 milisegundos)
     
     setInterval(() => {
-    axios.get('http://localhost:4000/estufas')
+    axios.get('http://localhost:5000/estufas')
     .then((response) => {
       setEstufas(response.data);
     })
 
     .catch(err => {
       console.log(err);})
-    }, 1000);
+    }, 10000);
 }, [] );
     
 
 
     return (
     <TemplateDefault maxWidth='md' className={classes.containerGeral}>
-        <Grid container spacing={0} className={classes.container}>
-        {estufas.map((estufa, key) => {
+        <Grid container className={classes.container}>
+        {Estufas.map((estufa, key) => {
         return(
-            <Grid item lg={2} md={4} sm={6} xs={12} className={classes.gridEstufa} key={key} >
-                <Typography variant="h3" component="h1" >
+            <Grid item lg={2} md={4} sm={6} xs={12} className={classes.gridEstufa} key={key} id="gridEstufa">
+                <Typography variant="h3" component="h1" className={classes.txtNome}>
                    {estufa.nome}
                 </Typography>
                 <div direction='column'className={classes.divInfos}>
-                    <Typography variant="h5" component="h3" className={classes.txtProduto}>
+                    <Typography variant="h3" component="h3" className={classes.txtProduto}>
                         Produto:
                    </Typography>
-                   <Typography variant="h6" component="h3" key={key}>
+                   <Typography variant="h4" component="h3" key={key}>
                         {estufa.produto}
                    </Typography>
                    <Typography variant="h5" component="h3" className={classes.txtOP}>
                         Ordem de Produção:
                    </Typography>
-                   <Typography variant="h6" component="h3" key={key}>
+                   <Typography variant="h4" component="h3" key={key}>
                         {estufa.ordem_producao}
                    </Typography>
                    <div direction="row" className={classes.divTempExaus}>
                        <Box className={classes.boxTemp}>
-                           <Typography variant="h5" component="h3" key={key}>
+                           <Typography variant="h4" component="h3" key={key}>
                                 {estufa.temperatura_estufa_lida}°C
                            </Typography>
                            <DeviceThermostatIcon fontSize="large"/>
                        </Box>
                        <Box className={classes.boxExaus}>
-                           <Typography variant="h5" component="h3" key={key}>
+                           <Typography variant="h4" component="h3" key={key}>
                                 {estufa.velocidade_exaustor_lida}
                            </Typography>
                            <HeatPumpIcon fontSize="large"/>
                        </Box>
                    </div>
                    <div direction="column" className={classes.divConfig}>
-                        <Typography className={classes.txtConfig}>
+                        <Typography variant="h5" component="h3" className={classes.txtConfig}>
                             Configuração:
                         </Typography>
                         <ul>
                             <li>
                                 <div className={classes.divConfigTemp}>
-                                    <Typography variant="h6" component="h3" className={classes.txtConfigTemp}>
+                                    <Typography variant="h5" component="h3" className={classes.txtConfigTemp}>
                                       Temperatura:
                                     </Typography>
-                                    <Typography variant="h6" component="h3" key={key} className={classes.apiConfigTemp}>
+                                    <Typography variant="h5" component="h3" key={key} className={classes.apiConfigTemp}>
                                       {estufa.temperatura_estufa_regulada}°C
                                     </Typography>
                                 </div>
                             </li>
                             <li>
                                 <div className={classes.divConfigTemp}>
-                                    <Typography variant="h6" component="h3" className={classes.txtConfigTemp}>
+                                    <Typography variant="h5" component="h3" className={classes.txtConfigTemp}>
                                       Receita:
                                     </Typography>
-                                    <Typography variant="h6" component="h3" key={key} className={classes.apiConfigTemp}>
+                                    <Typography variant="h5" component="h3" key={key} className={classes.apiConfigTemp}>
                                       {estufa.receita}
                                     </Typography>
                                 </div>
                             </li>
                             <li>
                                 <div className={classes.divConfigTemp}>
-                                    <Typography variant="h6" component="h3" className={classes.txtConfigTemp}>
+                                    <Typography variant="h5" component="h3" className={classes.txtConfigTemp}>
                                       Fan:
                                     </Typography>
-                                    <Typography variant="h6" component="h3" key={key} className={classes.apiConfigTemp}>
+                                    <Typography variant="h5" component="h3" key={key} className={classes.apiConfigTemp}>
                                       {estufa.velocidade_exaustor_regulada}
                                     </Typography>
                                 </div>

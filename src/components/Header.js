@@ -6,26 +6,37 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/core/Menu';
+import { makeStyles } from "@material-ui/core/styles";
+import { fontFamily } from '@mui/system';
+
+const useStyles = makeStyles((theme) => ({
+
+  containerHeader: {
+    backgroundColor: "rgb(63,81,181)",
+    padding: "1.25rem 0",
+    color: "white",
+    boxShadow: "0px 6px rgba(0, 0, 0, 0.05)",
+    textAlign: "center",
+    
+  },
+
+  titulo: {
+    fontSize: "1.65rem",
+    fontWeight: "bold",
+  }
+  
+
+}))
+
 
 export default function ButtonAppBar() {
+  const classes = useStyles();
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Andon TDK-Gravataí
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <Box sx={{ flexGrow: 1 }} className={classes.containerHeader}>
+      <Typography className={classes.titulo}>
+        Etapa de Secagem SE HP
+      </Typography>
     </Box>
   );
 }

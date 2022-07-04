@@ -2,9 +2,9 @@
     "estufas": [
         {   
             "id": 1,
-            "nome": "E01",
+            "nome": "ESTUFA01",
             "ordem_producao":15,
-            "temperatura_estufa_lida": 130.5,
+            "temperatura_estufa_lida": 130.555,
             "temperatura_estufa_regulada": 20,
             "tensao_lida": 20,
             "tensao_regulada": 20,
@@ -18,9 +18,9 @@
         },
         {
             "id": 2,
-            "nome": "E02",
+            "nome": "ESTUFA02",
             "ordem_producao": 2,
-            "temperatura_estufa_lida": 130.5,
+            "temperatura_estufa_lida": 130.555,
             "temperatura_estufa_regulada": 20,
             "tensao_lida": 20,
             "tensao_regulada": 20,
@@ -34,9 +34,9 @@
         },
         {
             "id": 3,
-            "nome": "E03",
+            "nome": "ESTUFA03",
             "ordem_producao": 3,
-            "temperatura_estufa_lida": 130.5,
+            "temperatura_estufa_lida": 130.555,
             "temperatura_estufa_regulada": 20,
             "tensao_lida": 20,
             "tensao_regulada": 20,
@@ -47,22 +47,6 @@
             "status": "Em processo",
             "receita": "receita3",
             "produto": "produto3"
-        },
-        {
-            "id": 4,
-            "nome": "E04",
-            "ordem_producao": 4,
-            "temperatura_estufa_lida": 130.5,
-            "temperatura_estufa_regulada": 20,
-            "tensao_lida": 20,
-            "tensao_regulada": 20,
-            "tempo_decorrido": 5,
-            "tempo_total": 15,
-            "velocidade_exaustor_lida": 40,
-            "velocidade_exaustor_regulada": 20,
-            "status": "Em processo",
-            "receita": "receita4",
-            "produto": "produto4"
         }
             
     ]
